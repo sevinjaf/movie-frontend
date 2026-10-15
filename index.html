@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Explorer - Film Axtarışı Platformu</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script><link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<header>
+     <div class="container header-container">
+        <h1 class="logo">🎬 MovieExplorer</h1>
+        <nav>
+     </div>
+</header>
+
+<main class="container">
+    <section class="controls-section">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Film adı daxil edin...">
+            <button id="search-btn">Axtar</button>
+            </div>
+            
+            <div class="filter-sort-box">
+                <select id="genre-select">
+                    <option value="">Bütün Janrlar</option>
+        
+                </select>
+                <select id="sort-select">
+                    <option value="popularity.desc">Populyarlığa görə (Azalan)</option>
+                    <option value="vote_average.desc">Reytinqə görə (Yüksəkdən aşağı)</option>
+                    <option value="primary_release_date.desc">Tarixə görə (Ən yeni)</option>
+                </select>
+            </div>
+        </section>
+        </main>
+
+        <div id="loading" class="loader hidden">Yüklənir...</div>
+        <div id="error-message" class="error-box hidden">
+            <p>Xəta baş verdi. Məlumatları yükləmək mümkün olmadı.</p>
+            <button id="retry-btn">Yenidən cəhd et</button>
+        </div>
+        <section id="movies-grid" class="movies-grid"></section>
+        </section>
+        <div id="pagination" class="pagination">
+            <button id="prev-btn" disabled>Geri</button>
+            <span id="page-info">Səhifə 1</span>
+            <button id="next-btn">İrəli</button>
+        </div>
+    </main>
+    <div id="movie-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modal-details">  
+                </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2026 Movie Explorer. Bütün hüquqlar qorunur.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
+    

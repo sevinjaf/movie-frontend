@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sevimli Filmlər — Movie Explorer</title>
+  
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container header-container">
+            <h1 class="logo">🎬 MovieExplorer</h1>
+            <nav>
+                <a href="index.html">Ana Səhifə</a>
+                <a href="favorites.html" class="active">Sevimlilər (<span id="fav-count">0</span>)</a>
+            </nav>
+        </div>
+    </header>
+
+   
+    <main class="container">
+        <section class="controls-section">
+            <h2>❤️ Sevimli Filmləriniz</h2>
+        </section>
+
+    
+        <section id="favorites-grid" class="movies-grid">
+
+        </section>
+    </main>
+
+
+    <footer>
+        <p>&copy; 2026 Movie Explorer. Bütün hüquqlar qorunur.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+:root {
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-color: #ffffff;
+    --text-secondary: #b0b0b0;
+    --accent-color: #e50914;
+    --accent-hover: #b20710;
+    --transition: 0.3s ease;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}  
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+header {
+    background-color: var(--card-bg);
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent-color);
+}
+.controls-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+
+.search-box, .filter-sort-box {
+    display: flex;
+    gap: 10px;
+} 
+input, select {
+    padding: 10px 15px;
+    background-color: var(--card-bg);
+    border: 1px solid #444;
+    color: var(--text-color);
+    border-radius: 5px;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: var(--accent-color);
+}
+button {
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+}
+button:hover {
+    background-color: var(--accent-hover);
+}
+
+button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.movie-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform var(--transition), box-shadow var(--transition);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+} 
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(229, 9, 20, 0.3);
+}
+
+.movie-poster {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+.movie-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.movie-title {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.movie-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+.fav-btn {
+    width: 100%;
+    padding: 8px;
+    background-color: #333;
+    font-size: 0.9rem;
+}
+
+.fav-btn.active {
+    background-color: var(--accent-color);
+}
+.hidden {
+    display: none !important;
+}
+
+.loader {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 40px 0;
+    color: var(--accent-color);
+}
+
+.error-box {
+    text-align: center;
+    background-color: #2c1515;
+    border: 1px solid var(--accent-color);
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .controls-section {
+        flex-direction: column;
+    }
+    .search-box, .filter-sort-box {
+        width: 100%;
+    }
+    input, select, .search-box button {
+        flex-grow: 1;
+    }
+}
